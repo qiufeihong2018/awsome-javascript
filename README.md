@@ -105,3 +105,22 @@ console.log(greet.next().value)
 // * yield 那就是generator,生成器函数指下一次next()生成的value,可以是有限的(最后是undefined),也可以是无限的.
 
 ```
+
+## promise
+```js
+const myPromise = new Promise(function (resolve, reject) {
+    if (Math.random() < 0.9) {
+        return resolve('aaa')
+    }
+    return reject('bbb')
+})
+
+myPromise.then(res => {
+    console.log('aaa', res)
+}).catch(err => {
+    console.log('bbb', err)
+})
+// promise解决回调地域!将异步逻辑包装在promise中,使用'then'处理成功的,'catch'处理异常的.
+
+
+```
