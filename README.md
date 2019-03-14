@@ -207,12 +207,6 @@ extend
 这是vue实例里的handleClick方法
 ```
 
-
-
-分析:
-执行
-我尝试过放入两个乃至多个extends,没有用滴.
-
 ### mixins和extends执行顺序(mixin在后)
 
 ```html
