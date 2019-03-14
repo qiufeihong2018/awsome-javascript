@@ -16,11 +16,23 @@
 <script>
     var extend = {
         data: {extendData: '我是extend的data'},
+        beforeCreate(){
+            console.log('这是extend的beforeCreate方法')
+        },
         created() {
             console.log('这是extend的created方法')
         },
+        beforeMount(){
+            console.log('这是extend的beforeMount方法')
+        },
         mounted(){
             console.log('这是extend的mounted方法')
+        },
+        beforeUpdate(){
+            console.log('这是extend的beforeUpdate方法')
+        },
+        updated(){
+            console.log('这是extend的updated方法')
         },
         methods: {
             handleClick() {
@@ -31,11 +43,23 @@
 
     var mixin = {
         data: {mixinData: '我是mixin的data'},
+        beforeCreate(){
+            console.log('这是mixin的beforeCreate方法')
+        },
         created() {
             console.log('这是mixin的created方法')
         },
+        beforeMount(){
+            console.log('这是mixin的beforeMount方法')
+        },
         mounted(){
             console.log('这是mixin的mounted方法')
+        },
+        beforeUpdate(){
+            console.log('这是mixin的beforeUpdate方法')
+        },
+        updated(){
+            console.log('这是mixin的updated方法')
         },
         methods: {
             handleClick() {
@@ -45,11 +69,23 @@
     }
     var mixin2 = {
         data: {mixinData: '我是mixin2的data'},
+        beforeCreate(){
+            console.log('这是mixin2的beforeCreate方法')
+        },
         created() {
             console.log('这是mixin2的created方法')
         },
+        beforeMount(){
+            console.log('这是mixin2的beforeMount方法')
+        },
         mounted(){
             console.log('这是mixin2的mounted方法')
+        },
+        beforeUpdate(){
+            console.log('这是mixin2的beforeUpdate方法')
+        },
+        updated(){
+            console.log('这是mixin2的updated方法')
         },
         methods: {
             handleClick() {
@@ -60,17 +96,23 @@
 
     var vm = new Vue({
         el: '#app',
-        data: {mixinData: '我是vue实例里的data'},
+        beforeCreate(){
+            console.log('这是vue实例里的beforeCreate方法')
+        },
         created() {
             console.log('这是vue实例里的created方法')
+        },
+        beforeMount(){
+            console.log('这是vue实例里的beforeMount方法')
         },
         mounted(){
             console.log('这是vue实例里的mounted方法')
         },
-        methods: {
-            handleClick() {
-                console.log('这是vue实例里的handleClick方法')
-            }
+        beforeUpdate(){
+            console.log('这是vue实例里的beforeUpdate方法')
+        },
+        updated(){
+            console.log('这是vue实例里的updated方法')
         },
         extends: extend,
         mixins: [mixin2, mixin]
