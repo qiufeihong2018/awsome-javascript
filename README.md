@@ -131,10 +131,14 @@ myPromise.then(res => {
 ## mixins-extends研究
 很多人都用过mixins和extends,但是偏偏就对mixins和extend的执行顺序不慎了解.
 那么开启我们的研究吧.
+
+
 mixins
 ![avatar](./vue/public/mixins.png)
-extend
+extends
 ![avatar](./vue/public/extend.png)
+
+>官网解释:mixins可以接受一个对象数组,而extend只能扩展一个组件/对象/函数
 
 ### mixins和extends执行顺序
 
@@ -683,8 +687,8 @@ extend
 
 ## 总结:
 
-1. 先执行extends,再执行mixins,然后才是vue实例的生命周期.
-2. 放入多个mixins,按mixins引用的顺序执行
-3. 不能放入两个乃至多个extends
-4. mixins/extends/vue实例生命周期执行顺序都是一样的,都是先一起执行完beforeCreate,然后在到created等等
+1. 先执行extends,再执行mixins,然后才是vue实例的生命周期;
+2. 放入多个mixins,按mixins引用的顺序执行;
+3. 不能放入两个乃至多个extends;
+4. mixins/extends/vue实例生命周期执行顺序都是一样的,都是先一起执行完beforeCreate,然后在到created等生命周期;
 5. vue实例里的方法会覆盖mixins和extends的重名方法和重名变量,如果vue实例中没有重名方法和重名变量,那么最后被引用的mixins会覆盖之前的mixins和extends方法和变量.
