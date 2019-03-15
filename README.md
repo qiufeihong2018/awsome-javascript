@@ -134,8 +134,11 @@ myPromise.then(res => {
 
 
 mixins
+
 ![avatar](./vue/public/mixins.png)
+
 extends
+
 ![avatar](./vue/public/extend.png)
 
 >官网解释:mixins可以接受一个对象数组,而extend只能扩展一个组件/对象/函数
