@@ -1,3 +1,57 @@
+# 你不知道的CSS
+## 三角形
+> 利用transparent透明属性,如果border每个方向上都不透明,则就是个正方形,想使之变成一个有朝向的三角形,只要该朝向的反向不透明其余透明即可.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>triangle</title>
+    <style>
+        #triangle {
+            width: 0;
+            height: 0;
+            border-top: 300px solid transparent;
+            border-left: 300px solid transparent;
+            border-right: 300px solid transparent;
+            border-bottom: 300px solid #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="triangle"></div>
+</body>
+</html>
+
+```
+![avatar](./css/public/triangle.png)
+
+将三角形补全
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>triangle</title>
+    <style>
+        #triangle {
+            width: 0;
+            height: 0;
+            border-top: 300px solid #ff0000;
+            border-left: 300px solid #ff0000;
+            border-right: 300px solid #ff0000;
+            border-bottom: 300px solid #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div id="triangle"></div>
+</body>
+</html>
+
+```
+![avatar](./css/public/square.png)
+
 # 你不知道的JS
 ## new
 ```js
@@ -126,7 +180,6 @@ myPromise.then(res => {
 
 ```
 
-
 ## prototype
 > 但是为什么实例对象里的变量的值却是A呢
 ```js
@@ -149,6 +202,20 @@ console.log(c.name)
 ```js
 function b(){}
 console.log(b.name)//b
+```
+
+> [JavaScript中函数的name属性](https://blog.csdn.net/goo_oooo/article/details/79242234)
+
+## sort
+
+>  sortFun()是一个函数,是sort排序的依据,<=0则不动,大于0则交换顺序
+
+```js
+let arr = [10, 145, 2, 455, 8, -456, 1536, 88, -54,]
+const sortFun = (first, second) => first - second
+arr.sort(sortFun)
+console.log(arr)//[ -456, -54, 2, 8, 10, 88, 145, 455, 1536 ]
+
 ```
 
 # 你不知道的Vue
