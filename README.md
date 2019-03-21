@@ -69,6 +69,7 @@ const t = create(Test, 'qfh')
 console.log(t.ddd)
 
 ```
+
 ## rest
 ```js
 function f(...args) {
@@ -125,6 +126,30 @@ myPromise.then(res => {
 
 ```
 
+
+## prototype
+> 但是为什么实例对象里的变量的值却是A呢
+```js
+function A(name) {
+    this.name = name || 'hhh'
+}
+
+function B() {
+}
+
+B.prototype = A
+const c = new B()
+console.log(c)
+console.log(c.name)
+```
+这段代码的作用是函数B的原型对象对函数A进行继承,但是B函数本身还是空方法.但是为什么实例对象里的变量却是A呢?
+那是因为实例对象c是B函数创建,所以它继承了函数B以及它的原型对象以及它的原型对象的原型对象上的所有属性和方法(就是这条原型链),
+所以c里有name变量.然后,回到问题:为什么是A呢?是因为每个函数都有隐藏的name属性,且该属性保存的是该函数名称的字符串.
+例如:
+```js
+function b(){}
+console.log(b.name)//b
+```
 
 # 你不知道的Vue
 
