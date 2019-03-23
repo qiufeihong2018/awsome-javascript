@@ -278,6 +278,44 @@ console.log(parseInt('3', 2, ['1', '2', '3']))// NaN   2进制是没有3的
 // {}
 // {}
 ```
+
+## array
+
+- 创建一个全为空的数组
+- 创建一个带有值的数组
+
+```js
+console.log(Array.apply(null, {length: 3}))// [ undefined, undefined, undefined ]
+
+console.log(Array.apply(null, {'0': 1, length: 3}))// [ 1, undefined, undefined ]
+
+console.log(Array.apply(null, {'2': 1, length: 3}))// [ undefined, undefined, 1 ]
+
+```
+## bitwiseOperators
+
+>位操作随机生成字符串待研究
+```js
+//字符串转数字
+console.log(+'1')//1
+console.log("1" * 1)//1
+console.log("1" | 0)//1
+console.log("1" >> 0)//1
+console.log("1" << 0)//1
+
+// 生成一个10位随机字符串
+
+let n = 10;
+var str = 'qwertyuiopaaaasdfghjkmnbvcxz1235456789'
+var res = ''
+for (let i = 0; i < n; i++) {
+    res += str[parseInt(Math.random() * (str.length + 1))]
+}
+console.log(res)//rkjhufinu3
+
+```
+
+
 # 你不知道的Vue
 
 ## mixins-extends研究
