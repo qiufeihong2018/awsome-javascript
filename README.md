@@ -315,7 +315,44 @@ console.log(res)//rkjhufinu3
 
 ```
 
+## this
+this的作用域:普通函数中,this指向的被调用的那个函数或对象;箭头函数中,this指向实例顶层
+```js
+const a = {
+  name: 'aaa',
+  greeting: function () {
+    return this.name
+  }
+}
 
+const b = {
+  name: 'bbb',
+  greeting: a.greeting
+}
+
+console.log(b.greeting())//bbb
+console.log(a.greeting.call(b))//bbb
+console.log(a.greeting.apply(b))//bbb
+console.log(a.greeting.bind(b)())//bbb
+const a = {
+  name: 'aaa',
+  greeting:  ()=> {
+    return this.name
+  }
+}
+
+const b = {
+  name: 'bbb',
+  greeting: a.greeting
+}
+
+console.log(b.greeting())//undefined
+console.log(a.greeting.call(b))//undefined
+console.log(a.greeting.apply(b))//undefined
+console.log(a.greeting.bind(b)())//undefined
+
+```
+![avatar](./js/public/this.png)
 # 你不知道的Vue
 
 ## mixins-extends研究
